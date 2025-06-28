@@ -48,6 +48,13 @@
             int num = int.Parse(Console.ReadLine()!);
             Console.WriteLine("Is the number prime? " + IsPrime(num)); // Returns true if prime, false otherwise
             #endregion
+            //_______________________//
+            #region Q6
+            int max = 0, min = 0;
+            MinMaxArray(ref max, ref min);
+            Console.WriteLine("The maximum value in the array is: " + max); // 800
+            Console.WriteLine("The minimum value in the array is: " + min); // 2
+            #endregion
             Console.ReadKey();
         }
         //_________________//
@@ -110,6 +117,21 @@
             else
                 P = false;
             return P;
+        }
+        #endregion
+        //_________________//
+        #region with Q6
+        public static void MinMaxArray(ref int max, ref int min)
+        {
+            int[] values = { 21, 21, 22, 9, 99, 180, 2, 800 };
+            for (int i = 0; i < values.Length; i++)
+            {
+                if (i != values.Length - 1)
+                {
+                    max = Math.Max(values[i], values[i + 1]);
+                    min = Math.Min(values[i], values[i + 1]);
+                }
+            }
         }
         #endregion
     }
