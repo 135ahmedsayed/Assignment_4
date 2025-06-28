@@ -29,6 +29,13 @@
             foreach (int i in values) Console.WriteLine(i);
             Console.WriteLine("\n");
             #endregion
+            //_______________________//
+            #region Q3
+            int RSum, RSub;
+            SummationAndSubtration(3, 3, out RSum, out RSub);
+            Console.WriteLine("The Summation is :" + RSum); //6 
+            Console.WriteLine("The Subtration is :" + RSub); //0
+            #endregion
             Console.ReadKey();
         }
         //_________________//
@@ -55,6 +62,14 @@
             pass = new int[] { 1, 1, 1, 1 };
             int sum = pass[1] + pass[2]; // Execute done and the original array changed
             return sum;
+        }
+        #endregion
+        //_________________//
+        #region with Q3
+        public static void SummationAndSubtration(int num1, int num2, out int sum, out int sub)
+        {
+            sum = num1 + num2; // Calculate the sum
+            sub = num1 - num2; // Calculate the subtraction
         }
         #endregion
     }
