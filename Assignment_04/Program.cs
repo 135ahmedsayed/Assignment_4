@@ -62,6 +62,19 @@
             long fact = Factorial(input);
             Console.WriteLine($"Factorial of {input} is: {fact}");
             #endregion
+            //_______________________//
+            #region Q8
+            Console.Write("Enter a string: ");
+            string oldletter = Console.ReadLine()!;
+            Console.Write("Enter a Position replace: ");
+            int position = int.Parse(Console.ReadLine()!);
+            Console.Write("Enter a character to replace: ");
+            char newchar = char.Parse(Console.ReadLine()!);
+            string newletter = "";
+            ChangeChar(oldletter, position, newchar, out newletter);
+            Console.WriteLine($"The new string after replacement is: {newletter}");
+
+            #endregion
             Console.ReadKey();
         }
         //_________________//
@@ -157,6 +170,27 @@
                 Console.WriteLine("Number must be non-negative.");
 
             return factorial; // Return the calculated factorial
+        }
+        #endregion
+        //_________________//
+        #region with Q8
+        public static void ChangeChar(string letter, int Position, char x, out string newletter)
+        {
+            char[] chars = letter.ToCharArray();
+            newletter = "Position must be positive";
+            if (string.IsNullOrEmpty(letter.ToString()!) || Position < 0 || Position >= letter.Length)
+            {
+                Console.WriteLine("Invalid input.");
+            }
+            for (int i = 0; i < letter.Length; i++)
+            {
+                if (i == Position)
+                {
+                    chars[i] = x; // Replace the character at the specified position with 'X'
+                }
+            }
+            newletter = new string(chars);
+
         }
         #endregion
     }
