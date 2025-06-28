@@ -55,6 +55,13 @@
             Console.WriteLine("The maximum value in the array is: " + max); // 800
             Console.WriteLine("The minimum value in the array is: " + min); // 2
             #endregion
+            //_______________________//
+            #region Q7
+            Console.Write("Enter a number: ");
+            int input = int.Parse(Console.ReadLine()!);
+            long fact = Factorial(input);
+            Console.WriteLine($"Factorial of {input} is: {fact}");
+            #endregion
             Console.ReadKey();
         }
         //_________________//
@@ -132,6 +139,24 @@
                     min = Math.Min(values[i], values[i + 1]);
                 }
             }
+        }
+        #endregion
+        //_________________//
+        #region with Q7
+        public static long Factorial(int Number)
+        {
+            long factorial = 1; // Initialize factorial to 1
+            if (Number > 0)
+            {
+                for (int i = 2; i <= Number; i++)
+                {
+                    factorial *= i; // Calculate factorial
+                }
+            }
+            else
+                Console.WriteLine("Number must be non-negative.");
+
+            return factorial; // Return the calculated factorial
         }
         #endregion
     }
