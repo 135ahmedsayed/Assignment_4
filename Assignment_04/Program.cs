@@ -36,6 +36,12 @@
             Console.WriteLine("The Summation is :" + RSum); //6 
             Console.WriteLine("The Subtration is :" + RSub); //0
             #endregion
+            //_______________________//
+            #region Q4
+            Console.Write("Enter a number: ");
+            string Numbers = Console.ReadLine()!;
+            Console.WriteLine($"The sum of the digits of the number {Numbers} is: {SumDigits(Numbers)}");
+            #endregion
             Console.ReadKey();
         }
         //_________________//
@@ -70,6 +76,16 @@
         {
             sum = num1 + num2; // Calculate the sum
             sub = num1 - num2; // Calculate the subtraction
+        }
+        #endregion
+        //_________________//
+        #region with Q4
+        public static int SumDigits(string Number)
+        {
+            int sum = 0;
+            foreach (char c in Number)
+                sum += int.Parse(c.ToString());
+            return sum;
         }
         #endregion
     }
