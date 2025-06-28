@@ -42,6 +42,12 @@
             string Numbers = Console.ReadLine()!;
             Console.WriteLine($"The sum of the digits of the number {Numbers} is: {SumDigits(Numbers)}");
             #endregion
+            //_______________________//
+            #region Q5
+            Console.Write("Enter a number to check if it is prime: ");
+            int num = int.Parse(Console.ReadLine()!);
+            Console.WriteLine("Is the number prime? " + IsPrime(num)); // Returns true if prime, false otherwise
+            #endregion
             Console.ReadKey();
         }
         //_________________//
@@ -86,6 +92,24 @@
             foreach (char c in Number)
                 sum += int.Parse(c.ToString());
             return sum;
+        }
+        #endregion
+        //_________________//
+        #region with Q5
+        public static bool IsPrime(int number)
+        {
+            bool P = false;
+            if (number >= 1)
+            {
+                for (int i = 2; i < number; i++)
+                {
+                    if (number % i == 0)
+                        P = false;
+                }
+            }
+            else
+                P = false;
+            return P;
         }
         #endregion
     }
